@@ -1,0 +1,518 @@
+@import "config";
+
+// header
+
+.header {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 2rem;
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: brightness(0.75);
+
+    @include no-select;
+    @include img-cover;
+  }
+}
+
+.header__anchor {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid $white;
+  width: 1.25rem;
+  height: 2rem;
+  border-radius: 999rem;
+  position: relative;
+  transition: $trs;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 0.25rem;
+    height: 0.25rem;
+    background: $white;
+    border-radius: 50%;
+    margin: 0.5rem 0;
+    animation: anchor $trs-long alternate infinite;
+  }
+}
+
+@keyframes anchor {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.header__content {
+  text-align: center;
+
+  h1 {
+    padding-bottom: 0.75rem;
+  }
+}
+
+// nav
+
+.nav {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.nav__item {
+  &.active {
+    .nav__link {
+      color: $accent;
+    }
+  }
+
+  & + & {
+    margin-left: 2rem;
+  }
+}
+
+.nav__link {
+  color: $white;
+  transition: $trs;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// form control
+
+.form-control + .form-control {
+  margin-top: 1rem;
+}
+
+input.form-control,
+textarea.form-control,
+button.form-control,
+.select__input {
+  border-radius: $bdrs;
+  color: $text;
+  padding: 0.75rem 1rem;
+  font-size: 0.9em;
+  width: 100%;
+  transition: $trs background;
+}
+
+input.form-control,
+textarea.form-control,
+.select__input {
+  background: $gray-1;
+
+  &::placeholder {
+    color: inherit;
+  }
+
+  &:hover {
+    background: $gray-1-dark;
+  }
+}
+
+input.form-control {
+  cursor: text;
+
+  &[type="date"] {
+    padding: calc(0.75rem - 2px);
+  }
+}
+
+textarea.form-control {
+  resize: none;
+  min-height: 20rem;
+}
+
+button.form-control {
+  cursor: pointer;
+  background: $accent;
+
+  @include hide-text(1);
+
+  &.auto-width {
+    width: auto;
+  }
+
+  &:hover {
+    background: $accent-dark;
+  }
+}
+
+.radio {
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__item {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__item + &__label {
+    display: inline-flex;
+    align-items: center;
+
+    @include no-select;
+
+    // radio
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 1px solid $gray-1;
+      margin-right: 1rem;
+      transition: $trs;
+    }
+  }
+
+  // radio checked
+
+  &__item:not(:disabled):checked + &__label::before {
+    background: $gray-2;
+  }
+}
+
+.select {
+  position: relative;
+
+  &.active {
+    .select__dropdown {
+      transform: translateY(calc((2rem + 0.9em) + 0.75rem - 1px)) !important;
+      opacity: 1 !important;
+      pointer-events: all;
+    }
+
+    .select__arrow {
+      bottom: -1.25rem !important;
+      opacity: 1 !important;
+    }
+
+    .select__icon {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: calc(0.75rem - 3.5px) 1rem;
+  }
+
+  &__text {
+    margin-right: 1rem;
+
+    @include no-select;
+    @include hide-text(1);
+  }
+}
+
+.select__icon {
+  transition: $trs;
+  transition-delay: $cubic-bezier;
+
+  svg {
+    vertical-align: middle;
+
+    path {
+      fill: $text;
+    }
+  }
+}
+
+.select__dropdown {
+  border-radius: $bdrs;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(calc((1rem + 0.9em) + 0.75rem - 1px));
+  opacity: 0;
+  pointer-events: none;
+  overflow: auto;
+  z-index: 1;
+  transition: $cubic-bezier;
+
+  @supports (backdrop-filter: blur(1rem) saturate(180%)) {
+    backdrop-filter: blur(1rem) saturate(180%);
+  }
+}
+
+.select__option {
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: $trs;
+
+  @supports (backdrop-filter: blur(1rem) saturate(180%)) {
+    background: rgba($gray-1, 0.75);
+
+    &:hover {
+      background: rgba($gray-1-dark, 0.75);
+    }
+
+    &.active {
+      background: rgba($accent, 0.75);
+
+      &:hover {
+        background: rgba($accent-dark, 0.75);
+      }
+    }
+  }
+
+  @supports not (backdrop-filter: blur(1rem) saturate(180%)) {
+    background: $gray-1;
+
+    &:hover {
+      background: $gray-1-dark;
+    }
+
+    &.active {
+      background: $accent;
+
+      &:hover {
+        background: $accent-dark;
+      }
+    }
+  }
+
+  @include no-select;
+
+  & + & {
+    border-top: 1px solid $gray-2;
+  }
+
+  label {
+    display: block;
+    padding: calc(0.75rem - 3.5px) 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+.select__arrow {
+  transition: $trs;
+  transition-delay: $trs;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: $gray-1;
+  border-radius: $bdrs / 4;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  opacity: 0;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  transform: rotate(135deg);
+}
+
+// search section
+
+#search {
+  @include media-breakpoint-up(md) {
+    [class*="col-"]:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    [class*="col-"]:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// slider
+
+.swiper-wrapper {
+  margin-bottom: 4rem;
+}
+
+.swiper-pagination {
+  &-bullet {
+    background: $gray-2;
+    width: 0.75rem;
+    height: 0.75rem;
+    transition: $trs;
+
+    &-active {
+      background: $gray-1;
+    }
+  }
+}
+
+.card {
+  &__img {
+    border-radius: $bdrs;
+    height: 10rem !important;
+
+    @include media-breakpoint-down(md) {
+      height: 20rem !important;
+    }
+
+    @include no-select;
+    @include img-cover;
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+
+    @include hide-text(2);
+  }
+
+  &__text {
+    font-size: 0.75em;
+    margin-bottom: 1rem;
+
+    @include hide-text(4);
+  }
+
+  &__link {
+    font-size: 0.75em;
+    color: $accent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// subscribe section
+
+#subscribe {
+  @include media-breakpoint-down(sm) {
+    [class*="col-"]:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// algorithm booking section
+
+.steps {
+  border-radius: $bdrs;
+  padding: 4rem 4rem 6rem 4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: $white;
+
+  @include media-breakpoint-down(md) {
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 2rem 0;
+  }
+
+  &__number {
+    border-radius: 50%;
+    border: 3px solid $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2em;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+
+    @include no-select;
+  }
+}
+
+.steps__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.left {
+    align-self: flex-start;
+
+    .steps__title {
+      text-align: left;
+      flex-grow: 1;
+      padding-left: 2rem;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+
+    .steps__title {
+      flex-grow: 1;
+      text-align: right;
+      padding-right: 2rem;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        padding-right: 0;
+      }
+    }
+  }
+
+  & + & {
+    margin-top: 2rem;
+  }
+}
+
+// origin section
+
+.origin {
+  .section__title {
+    text-align: center;
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+}

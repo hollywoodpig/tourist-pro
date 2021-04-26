@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tourist Pro</title>
+		<link rel="icon" href="images/dest/favicon.png">
+		<link rel="stylesheet" href="css/app.min.css">
+	</head>
+	<body>
+		<header class="header">
+			<img src="images/dest/header.jpg" alt="" class="header__background">
+			<div class="container h-100 d-flex flex-column justify-content-between align-content-center">
+				<nav class="nav">
+					<div class="container">
+						<div class="row justify-content-lg-between justify-content-center align-items-center">
+							<div class="col-auto">
+								<a class="logo" href="#">
+									<img src="images/dest/logo.svg" alt="">
+								</a>
+							</div>
+							<div class="col-auto">
+								<ul class="nav__menu d-flex">
+									<li class="nav__item active"><a class="nav__link" href="#">Главная</a></li>
+									<li class="nav__item"><a class="nav__link" href="#">Поиск маршрута</a></li>
+									<li class="nav__item"><a class="nav__link" href="#">Выбор зоны</a></li>
+									<li class="nav__item"><a class="nav__link" href="#">Бронирование</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<div class="header__content">
+					<h1>Tourist Pro</h1>
+					<p>Здесь начинаются мечты</p>
+				</div>
+				<a class="header__anchor" href="#booking-section"></a>
+			</div>
+		</header>
+		<main>
+			<section class="section booking" id="booking-section">
+				<div class="container">
+					<h2 class="section__title">Управление бронированием</h2>
+					<div class="section__inner">
+						<div class="row">
+							<div class="col col-lg-6">
+								<form id="booking" class="form">
+									<input required class="form-control" type="date" id="booking-day-from" id="booking-day-from" placeholder="Дата похода с">
+									<input required class="form-control" type="date" id="booking-day-to" id="booking-day-to" placeholder="Дата похода до">
+									<div class="form-control select">
+										<div class="select__input">
+											<span class="select__text">Регион</span>
+											<i class="select__icon">
+												<svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M0.188289 0.183058C0.43934 -0.0610195 0.846374 -0.0610196 1.09743 0.183058L4.5 3.49112L7.90257 0.183057C8.15363 -0.0610208 8.56066 -0.0610209 8.81171 0.183057C9.06276 0.427134 9.06276 0.822862 8.81171 1.06694L4.95457 4.81694C4.70352 5.06102 4.29648 5.06102 4.04543 4.81694L0.188289 1.06694C-0.0627627 0.822864 -0.0627628 0.427136 0.188289 0.183058Z" />
+												</svg>													
+											</i>
+										</div>
+										<span class="select__arrow"></span>
+										<div class="select__dropdown">
+											<div class="select__option">
+												<input required type="radio" name="booking-region" id="booking-region-1" value="region-1">
+												<label for="booking-region-1">Регион 1</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-region" id="booking-region-2" value="region-2">
+												<label for="booking-region-2">Регион 2</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-region" id="booking-region-3" value="region-3">
+												<label for="booking-region-3">Регион 3</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-region" id="booking-region-4" value="region-4">
+												<label for="booking-region-4">Регион 4</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-control select">
+										<div class="select__input">
+											<span class="select__text">Зона</span>
+											<i class="select__icon">
+												<svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M0.188289 0.183058C0.43934 -0.0610195 0.846374 -0.0610196 1.09743 0.183058L4.5 3.49112L7.90257 0.183057C8.15363 -0.0610208 8.56066 -0.0610209 8.81171 0.183057C9.06276 0.427134 9.06276 0.822862 8.81171 1.06694L4.95457 4.81694C4.70352 5.06102 4.29648 5.06102 4.04543 4.81694L0.188289 1.06694C-0.0627627 0.822864 -0.0627628 0.427136 0.188289 0.183058Z" />
+												</svg>													
+											</i>
+										</div>
+										<span class="select__arrow"></span>
+										<div class="select__dropdown">
+											<div class="select__option">
+												<input required type="radio" name="booking-zone" id="booking-zone-1" value="zone-1">
+												<label for="booking-zone-1">Зона 1</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-zone" id="booking-zone-2" value="zone-2">
+												<label for="booking-zone-2">Зона 2</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-zone" id="booking-zone-3" value="zone-3">
+												<label for="booking-zone-3">Зона 3</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="booking-zone" id="booking-zone-4" value="zone-4">
+												<label for="booking-zone-4">Зона 4</label>
+											</div>
+										</div>
+									</div>
+									<input required class="form-control" type="number" min="1" max="10" id="booking-members-quantity" name="booking-members-quantity" placeholder="Количество участников">
+									<div class="form-control radio">
+										<h4 class="radio__title">Подготовка участников</h4>
+										<div class="radio__group">
+											<input class="radio__item" type="radio" name="booking-preparation" id="booking-preparation-excellent" value="excellent" required>
+											<label class="radio__label" for="booking-preparation-excellent">Отличная</label>
+										</div>
+										<div class="radio__group">
+											<input class="radio__item" type="radio" name="booking-preparation" id="booking-preparation-medium" value="medium">
+											<label class="radio__label" for="booking-preparation-medium">Средняя</label>
+										</div>
+										<div class="radio__group">
+											<input class="radio__item" type="radio" name="booking-preparation" id="booking-preparation-bad" value="bad">
+											<label class="radio__label" for="booking-preparation-bad">Плохая</label>
+										</div>
+									</div>
+									<button class="form-control auto-width" type="submit">Отправить</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section search" id="search-section">
+				<div class="container">
+					<h2 class="section__title">Поиск маршрутов</h2>
+				</div>
+				<div class="section__inner filled_form">
+					<div class="container">
+						<form id="search" class="form">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-control select">
+										<div class="select__input">
+											<span class="select__text">Регион</span>
+											<i class="select__icon">
+												<svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M0.188289 0.183058C0.43934 -0.0610195 0.846374 -0.0610196 1.09743 0.183058L4.5 3.49112L7.90257 0.183057C8.15363 -0.0610208 8.56066 -0.0610209 8.81171 0.183057C9.06276 0.427134 9.06276 0.822862 8.81171 1.06694L4.95457 4.81694C4.70352 5.06102 4.29648 5.06102 4.04543 4.81694L0.188289 1.06694C-0.0627627 0.822864 -0.0627628 0.427136 0.188289 0.183058Z" />
+												</svg>													
+											</i>
+										</div>
+										<span class="select__arrow"></span>
+										<div class="select__dropdown">
+											<div class="select__option">
+												<input required type="radio" name="search-region" id="search-region-1" value="region-1">
+												<label for="search-region-1">Регион 1</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="search-region" id="search-region-2" value="region-2">
+												<label for="search-region-2">Регион 2</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="search-region" id="search-region-3" value="region-3">
+												<label for="search-region-3">Регион 3</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="search-region" id="search-region-4" value="region-4">
+												<label for="search-region-4">Регион 4</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<input required class="form-control" type="date" id="search-day-from" id="search-day-from" placeholder="Дата похода с">
+								</div>
+								<div class="col-md-4">
+									<input required class="form-control" type="date" id="search-day-to" id="search-day-to" placeholder="Дата похода до">
+								</div>
+								<div class="col-md-4">
+									<input required class="form-control" type="number" min="1" max="10" id="search-members-quantity" name="search-members-quantity" placeholder="Количество участников">
+								</div>
+								<div class="col-md-4">
+									<div class="form-control select">
+										<div class="select__input">
+											<span class="select__text">Подготовка участников</span>
+											<i class="select__icon">
+												<svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M0.188289 0.183058C0.43934 -0.0610195 0.846374 -0.0610196 1.09743 0.183058L4.5 3.49112L7.90257 0.183057C8.15363 -0.0610208 8.56066 -0.0610209 8.81171 0.183057C9.06276 0.427134 9.06276 0.822862 8.81171 1.06694L4.95457 4.81694C4.70352 5.06102 4.29648 5.06102 4.04543 4.81694L0.188289 1.06694C-0.0627627 0.822864 -0.0627628 0.427136 0.188289 0.183058Z" />
+												</svg>													
+											</i>
+										</div>
+										<span class="select__arrow"></span>
+										<div class="select__dropdown">
+											<div class="select__option">
+												<input required type="radio" name="search-preparation" id="search-preparation-excellent" value="excellent">
+												<label for="search-preparation-excellent">Отличная</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="search-preparation" id="search-preparation-medium" value="medium">
+												<label for="search-preparation-medium">Средняя</label>
+											</div>
+											<div class="select__option">
+												<input type="radio" name="search-preparation" id="search-preparation-bad" value="bad">
+												<label for="search-preparation-bad">Плохая</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<button class="form-control" type="submit">Найти</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="section events" id="events-section">
+				<div class="container">
+					<h2 class="section__title">Акции</h2>
+					<div class="section__inner">
+						<div class="swiper-container events-slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Название акции</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<a class="card__link" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section subscribe" id="subscribe-section">
+				<div class="container">
+					<h2 class="section__title">Подпишитесь на закрытые акции</h2>
+				</div>
+				<div class="section__inner filled_form">
+					<div class="container">
+						<form id="subscribe" class="form">
+								<div class="row">
+									<div class="col-12 col-md-6 col-lg-3">
+										<input class="form-control" id="subscribe-email" name="subscribe-email" type="email" placeholder="Email" required>
+									</div>
+									<div class="col-12 col-md-6 col-lg-auto">
+										<button class="form-control" type="submit">Подписаться</button>
+									</div>
+								</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="section booking-algorithm" id="booking-algorithm-section">
+				<div class="container">
+					<h2 class="section__title">Алгоритм бронирования</h2>
+					<div class="section__inner">
+						<div class="steps overlay" style="background-image: url('images/dest/booking-algorithm.jpg');">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-6 mb-5 mb-lg-0">
+										<div class="steps__item left">
+											<div class="steps__number">1</div>
+											<h3 class="steps__title">Первый шаг</h3>
+										</div>
+										<div class="steps__item left">
+											<div class="steps__number">2</div>
+											<h3 class="steps__title">Второй шаг</h3>
+										</div>
+										<div class="steps__item left">
+											<div class="steps__number">3</div>
+											<h3 class="steps__title">Третий шаг</h3>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="steps__item right">
+											<div class="steps__number">4</div>
+											<h3 class="steps__title">Четвертый шаг</h3>
+										</div>
+										<div class="steps__item right">
+											<div class="steps__number">5</div>
+											<h3 class="steps__title">Пятый шаг</h3>
+										</div>
+										<div class="steps__item right">
+											<div class="steps__number">6</div>
+											<h3 class="steps__title">Шестой шаг</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section origin" id="origin-section">
+				<div class="container">
+					<h2 class="section__title">Цель нашей компании</h2>
+					<div class="section__inner">
+						<div class="row">
+							<div class="col-12 col-xl-6 mx-auto">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus nisl tincidunt eget nullam non nisi est. Aliquam ut porttitor leo a diam sollicitudin tempor. Magna fringilla urna porttitor rhoncus. Adipiscing elit pellentesque habitant morbi tristique senectus. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Sed velit dignissim sodales ut eu sem. Vel risus commodo viverra maecenas accumsan lacus. Pellentesque sit amet porttitor eget dolor morbi non. In nisl nisi scelerisque eu. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Nunc sed id semper risus in. Nullam ac tortor vitae purus. Odio euismod lacinia at quis. Est placerat in egestas erat imperdiet sed.
+								</p>
+								<p>
+									Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Massa enim nec dui nunc mattis enim ut tellus. Nisl nunc mi ipsum faucibus. Interdum consectetur libero id faucibus nisl tincidunt eget nullam non. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. A cras semper auctor neque vitae tempus. Tortor posuere ac ut consequat. Hendrerit gravida rutrum quisque non tellus orci ac. Feugiat scelerisque varius morbi enim.
+								</p>
+								<p>Lorem ipsum dolor sit amet!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section reviews" id="reviews-section">
+				<div class="section__inner filled">
+					<div class="container">
+						<h2 class="section__title">Отзывы клиентов</h2>
+						<div class="swiper-container reviews-slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="card">
+										<img class="card__img" src="images/dest/card.jpg" alt="">
+										<div class="card__body">
+											<h4 class="card__title">Автор отзыва</h4>
+											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

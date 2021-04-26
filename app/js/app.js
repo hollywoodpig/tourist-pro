@@ -1,21 +1,23 @@
 // header parallax
 
-const header = document.querySelector('.header')
-const headerImg = document.querySelector('.header__background')
+if (document.querySelector('.header__background') instanceof  Element) {
+  const header = document.querySelector('.header')
+  const headerImg = document.querySelector('.header__background')
 
-const headerImgParallaxAmountPercent = 20
-const headerImgParallaxAmountProportion = (headerImgParallaxAmountPercent / 100 + 1)
-
-headerImg.style.transform = `scale(${headerImgParallaxAmountProportion})`
-
-document.addEventListener('mousemove', e => {
-  if (e.path.includes(header)) {
-    const depthX = -e.pageX / (headerImgParallaxAmountPercent * 2) + 'px'
-    const depthY = -e.pageY / (headerImgParallaxAmountPercent * 2) + 'px'
+  const headerImgParallaxAmountPercent = 20
+  const headerImgParallaxAmountProportion = (headerImgParallaxAmountPercent / 100 + 1)
   
-    headerImg.style.transform = `scale(${headerImgParallaxAmountProportion}) translate(${depthX}, ${depthY})`
-  }
-})
+  headerImg.style.transform = `scale(${headerImgParallaxAmountProportion})`
+  
+  document.addEventListener('mousemove', e => {
+    if (e.path.includes(header)) {
+      const depthX = -e.pageX / (headerImgParallaxAmountPercent * 2) + 'px'
+      const depthY = -e.pageY / (headerImgParallaxAmountPercent * 2) + 'px'
+    
+      headerImg.style.transform = `scale(${headerImgParallaxAmountProportion}) translate(${depthX}, ${depthY})`
+    }
+  })
+}
 
 // input date placeholder
 
@@ -91,3 +93,20 @@ const sliderOptionsEffect = {
 
 const eventsSlider = new Swiper('.events-slider', sliderOptions)
 const reviewsSlider = new Swiper('.reviews-slider', {...sliderOptions, ...sliderOptionsEffect})
+const zonesSlider = new Swiper('.zones-slider', sliderOptions)
+
+// select card in slider
+
+const zonesSliderLinks = document.querySelectorAll('.zones-slider .card__link')
+
+zonesSliderLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    zonesSliderLinks.forEach(link => {
+      link.parentNode.parentNode.classList.remove('active')
+      link.querySelector('label').textContent = 'Выбрать'
+    })
+
+    link.parentNode.parentNode.classList.add('active')
+    link.querySelector('label').textContent = 'Выбрано'
+  })
+})

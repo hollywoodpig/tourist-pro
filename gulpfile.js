@@ -10,7 +10,7 @@ const cleancss = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
-
+const babel = require('gulp-babel')
 
 function browsersync() {
 	browserSync.init({
@@ -25,6 +25,9 @@ function scripts() {
 		'node_modules/swiper/swiper-bundle.js',
 		'app/js/app.js'
 	])
+	.pipe(babel({
+		presets: ['@babel/env']
+	}))
 	.pipe(concat('app.min.js'))
 	.pipe(uglify())
 	.pipe(dest('app/js/'))

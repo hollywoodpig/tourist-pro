@@ -21,7 +21,7 @@
 							</div>
 							<div class="col-auto">
 								<ul class="nav__menu">
-									<li class="nav__item active"><a class="nav__link" href="/">Главная</a></li>
+									<li class="nav__item active"><a class="nav__link" href="index.html">Главная</a></li>
 									<li class="nav__item"><a class="nav__link" href="routes.html">Поиск маршрута</a></li>
 									<li class="nav__item"><a class="nav__link" href="zones.html">Выбор зоны</a></li>
 									<li class="nav__item"><a class="nav__link" href="booking.html">Бронирование</a></li>
@@ -45,8 +45,8 @@
 						<div class="row">
 							<div class="col col-lg-6">
 								<form id="booking" class="form">
-									<input required class="form-control" type="date" id="booking-day-from" placeholder="Дата похода с">
-									<input required class="form-control" type="date" id="booking-day-to" placeholder="Дата похода до">
+									<input required class="form-control" type="date" id="booking-day-from" data-placeholder="Дата похода с">
+									<input required class="form-control" type="date" id="booking-day-to" data-placeholder="Дата похода до">
 									<div class="form-control select">
 										<div class="select__input">
 											<span class="select__text">Регион</span>
@@ -88,19 +88,19 @@
 										<span class="select__arrow"></span>
 										<div class="select__dropdown">
 											<div class="select__option">
-												<input required type="radio" name="booking-zone" id="booking-zone-1" value="zone-1">
+												<input type="checkbox" name="booking-zone-1" id="booking-zone-1">
 												<label for="booking-zone-1">Зона 1</label>
 											</div>
 											<div class="select__option">
-												<input type="radio" name="booking-zone" id="booking-zone-2" value="zone-2">
+												<input type="checkbox" name="booking-zone-2" id="booking-zone-2">
 												<label for="booking-zone-2">Зона 2</label>
 											</div>
 											<div class="select__option">
-												<input type="radio" name="booking-zone" id="booking-zone-3" value="zone-3">
+												<input type="checkbox" name="booking-zone-3" id="booking-zone-3">
 												<label for="booking-zone-3">Зона 3</label>
 											</div>
 											<div class="select__option">
-												<input type="radio" name="booking-zone" id="booking-zone-4" value="zone-4">
+												<input type="checkbox" name="booking-zone-4" id="booking-zone-4">
 												<label for="booking-zone-4">Зона 4</label>
 											</div>
 										</div>
@@ -168,10 +168,10 @@
 									</div>
 								</div>
 								<div class="col-md-4">
-									<input required class="form-control" type="date" id="search-day-from" placeholder="Дата похода с">
+									<input required class="form-control" type="date" id="search-day-from" data-placeholder="Дата похода с">
 								</div>
 								<div class="col-md-4">
-									<input required class="form-control" type="date" id="search-day-to" placeholder="Дата похода до">
+									<input required class="form-control" type="date" id="search-day-to" data-placeholder="Дата похода до">
 								</div>
 								<div class="col-md-4">
 									<input required class="form-control" type="number" min="1" max="10" id="search-members-quantity" name="search-members-quantity" placeholder="Количество участников">
@@ -223,7 +223,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -233,7 +233,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -243,7 +243,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -253,7 +253,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -263,7 +263,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -273,7 +273,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -283,7 +283,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -293,7 +293,7 @@
 										<div class="card__body">
 											<h4 class="card__title">Название акции</h4>
 											<p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<a class="card__link" href="#">Узнать больше</a>
+											<a class="card__link" href="event.html">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -470,7 +470,7 @@
 					<div class="col-auto">
 						<nav class="nav nav_vertical">
 							<ul class="nav__menu">
-								<li class="nav__item active"><a class="nav__link" href="/">Главная</a></li>
+								<li class="nav__item active"><a class="nav__link" href="index.html">Главная</a></li>
 								<li class="nav__item"><a class="nav__link" href="routes.html">Поиск маршрута</a></li>
 								<li class="nav__item"><a class="nav__link" href="zones.html">Выбор зоны</a></li>
 								<li class="nav__item"><a class="nav__link" href="booking.html">Бронирование</a></li>

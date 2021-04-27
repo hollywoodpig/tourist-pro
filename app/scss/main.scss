@@ -457,6 +457,10 @@ button.form-control {
   input[type="radio"] {
     @include hide-input;
   }
+
+  input[type="checkbox"] {
+    @include hide-input;
+  }
 }
 
 .select__arrow {

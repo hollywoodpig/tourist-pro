@@ -24,10 +24,24 @@ if (document.querySelector('.header__background') instanceof  Element) {
 const dateInputs = document.querySelectorAll('input[type=date]')
 
 dateInputs.forEach(input => {
-  input.type = 'text'
+  const placeholder = input.getAttribute('data-placeholder')
 
-  input.addEventListener('focus', () => input.type = 'date')
-  input.addEventListener('blur', () => input.type = 'text')
+  const toText = () => {
+    input.type = 'text'
+    input.placeholder = placeholder || ''
+  }
+
+  const toDate = () => {
+    input.type = 'date'
+
+    input.removeAttribute('placeholder')
+    input.setAttribute('data-placeholder', placeholder)
+  }
+
+  toText()
+
+  input.addEventListener('blur', toText)
+  input.addEventListener('focus', toDate)
 })
 
 // select
@@ -39,18 +53,46 @@ selects.forEach(select => {
   const $inputText = $input.querySelector('.select__text')
   const $options = select.querySelectorAll('.select__option')
 
+  const inputTextFirstValue = $inputText.textContent
+
   $input.addEventListener('click', () => {
     select.classList.toggle('active')
   })
 
   $options.forEach(option => {
     option.addEventListener('click', () => {
-      $options.forEach(option => {
-        option.classList.remove('active')
-      })
+      const optionInput = option.querySelector('input')
+      const optionInputType = optionInput.getAttribute('type')
 
-      option.classList.add('active')
-      $inputText.textContent = option.querySelector('label').textContent
+      if (optionInputType === 'radio') {
+        $options.forEach(option => {
+          option.classList.remove('active')
+        })
+  
+        option.classList.add('active')
+        $inputText.textContent = option.querySelector('label').textContent
+      }
+
+      if (optionInputType === 'checkbox') {
+        if (optionInput.checked) {
+          option.classList.add('active')
+        } else {
+          option.classList.remove('active')
+        }
+
+        const arr = []
+
+        select.querySelectorAll('input[type="checkbox"]:checked ~ label').forEach(item => {
+          arr.push(item.textContent)
+        })
+
+        if (arr.length === 0) {
+          $inputText.textContent = inputTextFirstValue
+        } else {
+          $inputText.textContent = arr.join(' ')
+        }
+      }
+
     })
   })
 })

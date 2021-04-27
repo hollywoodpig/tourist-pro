@@ -89,6 +89,10 @@
 .header__content {
   text-align: center;
 
+  @include media-breakpoint-down(md) {
+    margin: 8rem 0 6rem 0;
+  }
+
   h1 {
     padding-bottom: 0.75rem;
   }
@@ -98,6 +102,27 @@
 
 .nav {
   width: 100%;
+
+  &.adaptive {
+    @include media-breakpoint-down(md) {
+      .nav__menu {
+        flex-direction: column;
+      }
+
+      .nav__item {
+        margin-left: 0 !important;
+        text-align: center;
+
+        &:not(:first-child) {
+          margin-top: 0.5rem;
+        }
+      }
+
+      .nav__link {
+        font-size: 1.5em;
+      }
+    }
+  }
 
   .logo {
     @include media-breakpoint-down(md) {
@@ -111,25 +136,6 @@
 
   &__menu {
     display: flex;
-
-    &.adaptive {
-      @include media-breakpoint-down(md) {
-        flex-direction: column;
-
-        .nav__item {
-          margin-left: 0 !important;
-          text-align: center;
-
-          &:not(:first-child) {
-            margin-top: 0.5rem;
-          }
-        }
-
-        .nav__link {
-          font-size: 1.5em;
-        }
-      }
-    }
   }
 
   &_vertical {
@@ -449,7 +455,7 @@ button.form-control {
   }
 
   input[type="radio"] {
-    display: none;
+    @include hide-input;
   }
 }
 
@@ -544,8 +550,9 @@ button.form-control {
     @include hide-text(4);
   }
 
-  input[type="radio"] {
-    display: none;
+  input[type="radio"],
+  input[type="checkbox"] {
+    @include hide-input;
   }
 
   &__link {

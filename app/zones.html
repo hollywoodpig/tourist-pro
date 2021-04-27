@@ -9,7 +9,7 @@
 </head>
 <body class="another-page pin-footer">
     <header class="another-page__header">
-        <nav class="nav">
+        <nav class="nav adaptive">
             <div class="container">
                 <div class="row justify-content-lg-between justify-content-center align-items-center">
                     <div class="col-12 col-lg-auto">
@@ -18,11 +18,11 @@
                         </a>
                     </div>
                     <div class="col-auto">
-                        <ul class="nav__menu adaptive">
-                            <li class="nav__item"><a class="nav__link" href="#">Главная</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Поиск маршрута</a></li>
-                            <li class="nav__item active"><a class="nav__link" href="#">Выбор зоны</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Бронирование</a></li>
+                        <ul class="nav__menu">
+                            <li class="nav__item"><a class="nav__link" href="/">Главная</a></li>
+                            <li class="nav__item"><a class="nav__link" href="routes.html">Поиск маршрута</a></li>
+                            <li class="nav__item active"><a class="nav__link" href="zones.html">Выбор зоны</a></li>
+                            <li class="nav__item"><a class="nav__link" href="booking.html">Бронирование</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                                         <h4 class="card__title">Зона 1</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-1" value="zone-1" required>
+                                            <input type="checkbox" name="zone-1" id="zone-1">
                                             <label for="zone-1">Выбрать</label>
                                         </a>
                                     </div>
@@ -56,7 +56,7 @@
                                         <h4 class="card__title">Зона 2</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-2" value="zone-2" required>
+                                            <input type="checkbox" name="zone-2" id="zone-2">
                                             <label for="zone-2">Выбрать</label>
                                         </a>
                                     </div>
@@ -69,7 +69,7 @@
                                         <h4 class="card__title">Зона 3</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-3" value="zone-3" required>
+                                            <input type="checkbox" name="zone-3" id="zone-3">
                                             <label for="zone-3">Выбрать</label>
                                         </a>
                                     </div>
@@ -82,7 +82,7 @@
                                         <h4 class="card__title">Зона 4</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-4" value="zone-4" required>
+                                            <input type="checkbox" name="zone-4" id="zone-4">
                                             <label for="zone-4">Выбрать</label>
                                         </a>
                                     </div>
@@ -95,7 +95,7 @@
                                         <h4 class="card__title">Зона 5</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-5" value="zone-5" required>
+                                            <input type="checkbox" name="zone-5" id="zone-5">
                                             <label for="zone-5">Выбрать</label>
                                         </a>
                                     </div>
@@ -108,7 +108,7 @@
                                         <h4 class="card__title">Зона 6</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-6" value="zone-6" required>
+                                            <input type="checkbox" name="zone-6" id="zone-6">
                                             <label for="zone-6">Выбрать</label>
                                         </a>
                                     </div>
@@ -121,7 +121,7 @@
                                         <h4 class="card__title">Зона 7</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-7" value="zone-7" required>
+                                            <input type="checkbox" name="zone-7" id="zone-7">
                                             <label for="zone-7">Выбрать</label>
                                         </a>
                                     </div>
@@ -134,7 +134,7 @@
                                         <h4 class="card__title">Зона 8</h4>
                                         <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         <a class="card__link" href="#">
-                                            <input type="radio" name="zones" id="zone-8" value="zone-8" required>
+                                            <input type="checkbox" name="zone-8" id="zone-8">
                                             <label for="zone-8">Выбрать</label>
                                         </a>
                                     </div>
@@ -154,10 +154,10 @@
                 <div class="col-auto">
                     <nav class="nav nav_vertical">
                         <ul class="nav__menu">
-                            <li class="nav__item"><a class="nav__link" href="#">Главная</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Поиск маршрута</a></li>
-                            <li class="nav__item active"><a class="nav__link" href="#">Выбор зоны</a></li>
-                            <li class="nav__item"><a class="nav__link" href="#">Бронирование</a></li>
+                            <li class="nav__item"><a class="nav__link" href="/">Главная</a></li>
+                            <li class="nav__item"><a class="nav__link" href="routes.html">Поиск маршрута</a></li>
+                            <li class="nav__item active"><a class="nav__link" href="zones.html">Выбор зоны</a></li>
+                            <li class="nav__item"><a class="nav__link" href="booking.html">Бронирование</a></li>
                         </ul>
                     </nav>
                 </div>

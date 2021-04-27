@@ -102,11 +102,15 @@ const zonesSliderLinks = document.querySelectorAll('.zones-slider .card__link')
 zonesSliderLinks.forEach(link => {
   link.addEventListener('click', () => {
     zonesSliderLinks.forEach(link => {
-      link.parentNode.parentNode.classList.remove('active')
-      link.querySelector('label').textContent = 'Выбрать'
-    })
+      const checkbox = link.querySelector('input[type="checkbox"]')
 
-    link.parentNode.parentNode.classList.add('active')
-    link.querySelector('label').textContent = 'Выбрано'
+      if (checkbox.checked) {
+        link.parentNode.parentNode.classList.add('active')
+        link.querySelector('label').textContent = 'Выбрано'
+      } else {
+        link.parentNode.parentNode.classList.remove('active')
+        link.querySelector('label').textContent = 'Выбрать'
+      }
+    })
   })
 })
